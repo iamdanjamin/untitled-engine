@@ -2,11 +2,13 @@
 
 #include "defines.hpp"
 
+struct game;
+
 typedef struct application_config {
-    /** @brief Window starting position x axis, if applicable. */
+    // Window starting position x axis, if applicable.
     i16 start_pos_x;
 
-    /** @brief Window starting position y axis, if applicable. */
+    // Window starting position y axis, if applicable.
     i16 start_pos_y;
 
     /** @brief Window starting width, if applicable. */
@@ -19,6 +21,6 @@ typedef struct application_config {
     char* name;
 } application_config;
 
-UAPI b8 application_create(application_config* config);
+UAPI b8 application_create(struct game* game_inst);
 
 UAPI b8 application_run();

@@ -1,8 +1,8 @@
 #include "logger.hpp"
 #include "asserts.hpp"
-#include "platform.hpp"
+#include "platform/platform.hpp"
 
-#include <stdio.h>
+#include <cstdio>
 #include <cstring>
 #include <cstdarg>
 

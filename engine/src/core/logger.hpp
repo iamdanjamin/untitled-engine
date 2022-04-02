@@ -4,7 +4,7 @@
 
 #define LOG_WARN_ENABLED 1
 #define LOG_INFO_ENABLED 1
-#define LOG_DEBUG ENABLED 1
+#define LOG_DEBUG_ENABLED 1
 #define LOG_TRACE_ENABLED 1
 
 #if URELEASE == 1
@@ -62,14 +62,14 @@ UAPI void log_output(log_level level, const char* message, ...);
 #endif
 
 #if LOG_INFO_ENABLED == 1
-/**
+/*
  * @brief Logs an info-level message. Should be used for non-erronuous informational purposes.
  * @param message The message to be logged.
  * @param ... Any formatted data that should be included in the log entry.
  */
 #define UINFO(message, ...) log_output(LOG_LEVEL_INFO, message, ##__VA_ARGS__);
 #else
-/**
+/*
  * @brief Logs an info-level message. Should be used for non-erronuous informational purposes.
  * Does nothing when LOG_INFO_ENABLED != 1
  * @param message The message to be logged.
@@ -79,14 +79,14 @@ UAPI void log_output(log_level level, const char* message, ...);
 #endif
 
 #if LOG_DEBUG_ENABLED == 1
-/**
+/*
  * @brief Logs a debug-level message. Should be used for debugging purposes.
  * @param message The message to be logged.
  * @param ... Any formatted data that should be included in the log entry.
  */
 #define UDEBUG(message, ...) log_output(LOG_LEVEL_DEBUG, message, ##__VA_ARGS__);
 #else
-/**
+/*
  * @brief Logs a debug-level message. Should be used for debugging purposes.
  * Does nothing when LOG_DEBUG_ENABLED != 1
  * @param message The message to be logged.
@@ -96,14 +96,14 @@ UAPI void log_output(log_level level, const char* message, ...);
 #endif
 
 #if LOG_TRACE_ENABLED == 1
-/**
+/*
  * @brief Logs a trace-level message. Should be used for verbose debugging purposes.
  * @param message The message to be logged.
  * @param ... Any formatted data that should be included in the log entry.
  */
 #define UTRACE(message, ...) log_output(LOG_LEVEL_TRACE, message, ##__VA_ARGS__);
 #else
-/**
+/*
  * @brief Logs a trace-level message. Should be used for verbose debugging purposes.
  * Does nothing when LOG_TRACE_ENABLED != 1
  * @param message The message to be logged.

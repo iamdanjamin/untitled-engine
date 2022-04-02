@@ -1,5 +1,5 @@
 #include "platform.hpp"
-#include "logger.hpp"
+#include "core/logger.hpp"
 
 #if !UPLATFORM_WINDOWS
 
