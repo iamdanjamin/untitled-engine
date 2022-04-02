@@ -2,11 +2,15 @@
 
 #include "core/application.hpp"
 #include "core/logger.hpp"
+#include "core/umemory.hpp"
 #include "game_types.hpp"
 
 extern b8 create_game(game* out_game);
 
 int main(void) {
+
+    initialize_memory();
+
     // Request the game instance from the application.
     game game_inst;
 
@@ -41,6 +45,8 @@ int main(void) {
         UINFO("Application did not shutdown as expected.");
         return 2;
     }
+
+    shutdown_memory();
 
     return 0;
 }

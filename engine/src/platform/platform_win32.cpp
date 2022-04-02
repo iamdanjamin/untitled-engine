@@ -137,6 +137,10 @@ void *platform_copy_memory(void *dest, const void *source, u64 size) {
     return memcpy(dest, source, size);
 }
 
+void *platform_set_memory(void *dest, i32 value, u64 size) {
+    return memset(dest, value, size);
+}
+
 void platform_console_write(const char *message, u8 colour) {
     HANDLE console_handle = GetStdHandle(STD_OUTPUT_HANDLE);
     // FATAL,ERROR,WARN,INFO,DEBUG,TRACE

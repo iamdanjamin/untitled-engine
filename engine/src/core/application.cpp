@@ -4,6 +4,7 @@
 #include "logger.hpp"
 
 #include "platform/platform.hpp"
+#include "core/umemory.hpp"
 
 typedef struct application_state {
     game* game_inst;
@@ -64,6 +65,8 @@ b8 application_create(game* game_inst) {
 }
 
 b8 application_run() {
+    UINFO(get_memory_usage_str());
+
     while (app_state.is_running) {
         if (!platform_pump_messages(&app_state.platform)) {
             app_state.is_running = false;
